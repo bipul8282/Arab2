@@ -1,13 +1,8 @@
-
+/* ImageSlider.css */
 
 .parallax {
-  
   background-image: url("https://images.pexels.com/photos/220769/pexels-photo-220769.jpeg?cs=srgb&dl=pexels-pixabay-220769.jpg&fm=jpg");
-
- 
-  min-height: 100vh; 
-
-  
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,4 +47,30 @@
 
 .slider-button.next {
   right: 20px;
+}
+
+@media (max-width: 720px) {
+  .parallax {
+    min-height: auto; /* Remove fixed height on smaller screens */
+  }
+
+  .slider-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .slider-item {
+    flex: 0 0 100%;
+    max-width: 100%; /* Adjust image width to fit smaller screens */
+  }
+
+  .slider-button {
+    position: static; /* Remove absolute positioning for buttons */
+    font-size: 18px; /* Adjust button size for smaller screens */
+    margin-top: 20px; /* Add some spacing between buttons and images */
+  }
+  
+  .parallax h3 {
+    padding: 20px; /* Add padding to the text for better readability on smaller screens */
+  }
 }
