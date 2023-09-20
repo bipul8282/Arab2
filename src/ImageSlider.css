@@ -1,0 +1,55 @@
+/* ImageSlider.css */
+
+.parallax {
+  /* The image used */
+  background-image: url("https://images.pexels.com/photos/220769/pexels-photo-220769.jpeg?cs=srgb&dl=pexels-pixabay-220769.jpg&fm=jpg");
+
+  /* Set a specific height */
+  min-height: 100vh; /* Set the height to 100% of the viewport height */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider-container {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-item {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.slider-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.slider-button.prev {
+  left: 20px;
+}
+
+.slider-button.next {
+  right: 20px;
+}
